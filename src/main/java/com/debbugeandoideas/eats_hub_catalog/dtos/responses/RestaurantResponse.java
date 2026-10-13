@@ -4,6 +4,7 @@ import com.debbugeandoideas.eats_hub_catalog.enums.PriceEnum;
 import com.debbugeandoideas.eats_hub_catalog.records.Address;
 import com.debbugeandoideas.eats_hub_catalog.records.ContactInfo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Schema(description = "Response for Catalog")
 public class RestaurantResponse {
 
     private String name;

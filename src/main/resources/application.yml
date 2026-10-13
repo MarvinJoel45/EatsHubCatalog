@@ -27,6 +27,3 @@ spring:
           consumer:
             concurrency: 1
             max-attempts: 3
-server:
-  port: 8080
-
