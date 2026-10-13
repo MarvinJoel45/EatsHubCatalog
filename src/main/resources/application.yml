@@ -1,0 +1,32 @@
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb: DEBUG
+
+spring:
+  application:
+    name: eats_hub_catalog
+  webflux:
+    base-path: /catalog
+
+  cloud:
+    function:
+      definition: reviewEventConsumer
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          consumer-properties:
+            auto.offset.reset: earliest
+      bindings:
+        reviewEventConsumer-in-0:
+          destination: rating-events
+          content-type: text/plain
+          consumer:
+            concurrency: 1
+            max-attempts: 3
+server:
+  port: 8080
+
